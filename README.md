@@ -3,15 +3,18 @@
 #### Install PostgreSQL
 
 - Postgres can be installed from `https://www.postgresql.org/download/`
-- PGAdmin or DBeaver for GUI DB managers (or any other DB tool you'd like to use)
+- On Windows, the installer will include PgAdmin. You can also use another manager like DBeaver if you'd like.
   - `https://www.pgadmin.org/download/`
   - `https://dbeaver.io/download/`
 
 #### Set up the DB Connection
 
-- Edit the `application.properties` file for DB connections. This is only for development and should not have any important real prod info.
-- Enter the DB name, user, and password.
-- Run the `schema.sql` file in a new PostgreSQL DB. The default name is `student_management`.
+- After installing Postgres:
+  - On Windows, the service should start automatically. If not, check the windows `services` app and start Postgres.
+  - On Mac, the Postgres app will have a start/stop button.
+- Create a new database in PgAdmin. The DB name expected in the `application.properties` file is `student_management`, or you can rename it.
+- Edit the `application.properties` file for DB connection, username, and password. This is only for development and should not have any important real prod info.
+- Run the `schema.sql` file in the resources folder on the new DB to create the tables.
 
 #### Other options
 
