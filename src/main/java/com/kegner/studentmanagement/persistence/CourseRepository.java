@@ -82,7 +82,7 @@ public class CourseRepository implements BaseRepository<CourseEntity> {
         // Get the paginated values
         Map<Long, CourseEntity> courseMap = jdbcTemplate.query(
                 GET_QUERY_JOIN + " FROM( " + GET_QUERY + " FROM course "
-                        + whereClause + " LIMIT :limit OFFSET :offset) as c "
+                        + whereClause + orderBy + " LIMIT :limit OFFSET :offset) as c "
                         + " LEFT JOIN student_course sc ON c.id = sc.course_id " + orderBy,
                 params, resultSetExtractor);
 
